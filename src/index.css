@@ -7,3 +7,16 @@ body {
 #root {
     height: 100vh;
 }
+
+/* For NavBar */
+
+ul.nav-bar {
+    & li a:hover {
+        color: #28c3e6 !important;
+        text-decoration: dotted; 
+      }
+    & li a:active{
+        position: relative;
+        top: 1px;
+    }
+}
