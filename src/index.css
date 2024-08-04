@@ -2,6 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    background-color: #569af0;
 }
 
 #root {
@@ -12,7 +13,7 @@ body {
 
 ul.nav-bar {
     & li a:hover {
-        color: #28c3e6 !important;
+        color: black !important;
         text-decoration: dotted; 
       }
     & li a:active{
