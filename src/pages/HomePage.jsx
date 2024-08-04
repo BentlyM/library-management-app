@@ -14,10 +14,11 @@ const HomePage = () => {
         sx={{
           height: 'fit-content',
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           alignItems: 'center',
           flexWrap: 'wrap',
           padding: '15px',
+          gap: '20%'
         }}
       >
         <InfoCard
