@@ -1,7 +1,16 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
-const InfoCard = ({ title, titleHook, sentence, width, height, align }) => {
+const InfoCard = ({
+  title,
+  titleHook,
+  sentence,
+  width,
+  height,
+  align,
+  images,
+  color,
+}) => {
   return (
     <>
       <Box
@@ -13,7 +22,7 @@ const InfoCard = ({ title, titleHook, sentence, width, height, align }) => {
         flexWrap={'wrap'}
         gap={2}
         p={2}
-        color={'white'}
+        color={color}
         alignItems={align}
       >
         {title && (
@@ -25,12 +34,22 @@ const InfoCard = ({ title, titleHook, sentence, width, height, align }) => {
             {title}
           </Typography>
         )}
-        <Typography variant="h6" fontWeight={'bolder'}>
+        <Typography variant="h6" fontWeight={'bolder'} textAlign={align}>
           {titleHook}
         </Typography>
-        <Typography>{sentence}</Typography>
+        <Typography textAlign={align}>{sentence}</Typography>
+        <div className="marquee" style={{width: '100%', justifyContent: 'space-evenly', alignItems:'center', textAlign:'center', gap: '10px'}}>
+          {images &&
+            images.map((image, index) => (
+              <img key={index} src={image} alt="image" />
+            ))}
+        </div>
         <Button variant="contained" sx={{ width: 'fit-content' }}>
-          {title?.toLowerCase() == 'welcome' ? 'Explore' : 'Learn More'}
+          {title?.toLowerCase() == 'welcome'
+            ? 'Explore'
+            : title?.toLowerCase() == 'team'
+            ? 'im the team'
+            : 'Learn More'}
         </Button>
       </Box>
     </>
