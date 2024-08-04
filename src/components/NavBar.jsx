@@ -6,7 +6,7 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
 export default function NavBar() {
   const listStyling = {
-    'list-style-type': 'none',
+    listStyleType: 'none',
     display: 'flex',
     gap: '15px',
   };
@@ -32,7 +32,7 @@ export default function NavBar() {
               color: 'white',
             }}
           >
-            <LibraryBooksIcon style={{position: 'relative', top:'2px'}}/>
+            <LibraryBooksIcon style={{ position: 'relative', top: '2px' }} />
             Library Management
           </Typography>
           <ul className="nav-bar" style={listStyling}>
@@ -55,10 +55,10 @@ export default function NavBar() {
               </Link>
             </li>
             <li>
-              <Link 
+              <Link
                 style={{ textDecoration: 'none', color: 'white' }}
                 to={'login'}
-                >
+              >
                 Login
               </Link>
             </li>
