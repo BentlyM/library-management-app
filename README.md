@@ -8,18 +8,10 @@ A full-stack SaaS application for managing book libraries, built using Node.js, 
 
 * User Registration
 * User Login and Authentication
-* User details
+* User/Book details
 * Book Management: create, update, delete
 * Borrowing Book: borrow, return
 
-## Backend Deployment
---------------------
-
-The backend of this project is deployed on Vercel and can be accessed via the following link:
-
-[Backend Deployment Link](https://library-management-system-five-red.vercel.app/)
-
-## Backend Routes
 -----------------
 
 ### User Authentication
@@ -43,7 +35,7 @@ The backend of this project is deployed on Vercel and can be accessed via the fo
 
 ## Technologies Used
 --------------------
-
+* react,js
 * Node.js
 * Express.js
 * MongoDB
@@ -55,6 +47,4 @@ The backend of this project is deployed on Vercel and can be accessed via the fo
 ## Getting Started
 ---------------
 
-1. Clone the repository to your local machine:
-```bash
-git clone https://github.com/Rubel011/library-management-system.git
+[Link](library-management-app-xi.vercel.app)
