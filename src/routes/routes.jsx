@@ -12,7 +12,8 @@ const routes = [
   },
   {
     path: "/login",
-    element: <LoginPage />
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
   }
 ]
 
