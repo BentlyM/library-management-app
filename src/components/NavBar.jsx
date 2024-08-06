@@ -57,7 +57,7 @@ export default function NavBar() {
             <li>
               <Link
                 style={{ textDecoration: 'none', color: 'white' }}
-                to={'login'}
+                to={'/users/login'}
               >
                 Login
               </Link>
