@@ -7,22 +7,45 @@ import DefaultDashPage from '../pages/DefaultDashPage';
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     element: <HomePage />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/users/login",
+    path: '/users/login',
     element: <LoginPage />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/dashboard/profile/:name",
+    path: '/dashboard/profile/:name',
     element: <Dashboard />,
     children: [
-      {}
-    ]
-  }
-]
+      {
+        index: true,
+        element: <DefaultDashPage />,
+      },
+      {
+        path: 'add-book',
+        element: <div></div>,
+      },
+      {
+        path: 'current-books',
+        element: <div></div>,
+      },
+      {
+        path: 'send-books',
+        element: <div></div>,
+      },
+      {
+        path: 'borrow-books',
+        element: <div></div>,
+      },
+      {
+        path: 'profile',
+        element: <div></div>,
+      },
+    ],
+  },
+];
 
 export default routes;

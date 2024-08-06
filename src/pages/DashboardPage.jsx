@@ -18,7 +18,7 @@ import BookIcon from '@mui/icons-material/Book';
 import SendIcon from '@mui/icons-material/Send';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 import DefaultDashPage from './DefaultDashPage';
 
 const drawerWidth = 240;
@@ -54,6 +54,7 @@ export default function Dashboard() {
   const { name } = useParams();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [title , setTitle] = React.useState('Home Content')
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -62,6 +63,10 @@ export default function Dashboard() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const handleClick = (e) => {
+    setTitle(e.target.textContent);
+  }
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -103,40 +108,29 @@ export default function Dashboard() {
         <Divider />
         <List>
           {[
-            'Add Book',
-            'Current Books',
-            'Send Books',
-            'Borrow Books',
-            'Profile',
-          ].map((text, index) => {
-            const icons = [
-              <AddBoxIcon />,
-              <BookIcon />,
-              <SendIcon />,
-              <ImportContactsIcon />,
-              <AccountCircleIcon />,
-            ];
-            return (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>{icons[index]}</ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            );
-          })}
+            { text: 'Add Book', icon: <AddBoxIcon />, to: `add-book` },
+            { text: 'Current Books', icon: <BookIcon />, to: `current-books` },
+            { text: 'Send Books', icon: <SendIcon />, to: `send-books` },
+            {
+              text: 'Borrow Books',
+              icon: <ImportContactsIcon />,
+              to: 'borrow-books',
+            },
+            { text: 'Profile', icon: <AccountCircleIcon />, to: `` },
+          ].map((item, index) => (
+            <ListItem key={item.text} disablePadding>
+              <ListItemButton component={Link} to={item.to} onClick={handleClick}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
         </List>
       </Drawer>
       <Main open={open}>
         {/* Content goes here */}
-        <h1>Home Content</h1>
-        {name == 'default1' ? (
-          <div></div>
-        ) : name == 'default2' ? (
-          <div></div>
-        ) : (
-          <DefaultDashPage />
-        )}
+        <h1>{title}</h1>
+        <Outlet/>
       </Main>
     </Box>
   );
