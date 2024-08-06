@@ -2,8 +2,7 @@ import ErrorPage from '../error-page';
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import React from 'react';
-import ProfilePage from '../pages/ProfilePage';
-
+import Dashboard from '../pages/ProfilePage';
 
 const routes = [
   {
@@ -17,8 +16,8 @@ const routes = [
     errorElement: <ErrorPage />,
   },
   {
-    path: "/profile",
-    element: <ProfilePage />,
+    path: "/dashboard",
+    element: <Dashboard />
   }
 ]
 
