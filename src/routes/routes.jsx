@@ -17,13 +17,10 @@ const routes = [
     errorElement: <ErrorPage />,
   },
   {
-    path: "/dashboard",
+    path: "/dashboard/profile/:name",
     element: <Dashboard />,
     children: [
-      {
-        path: 'profile/:name',
-        element: <DefaultDashPage />,
-      }
+      {}
     ]
   }
 ]

@@ -19,6 +19,7 @@ import SendIcon from '@mui/icons-material/Send';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Outlet, useParams } from 'react-router-dom';
+import DefaultDashPage from './DefaultDashPage';
 
 const drawerWidth = 240;
 
@@ -128,8 +129,14 @@ export default function Dashboard() {
       </Drawer>
       <Main open={open}>
         {/* Content goes here */}
-        <h1>Dashboard Content</h1>
-        <Outlet />
+        <h1>Home Content</h1>
+        {name == 'default1' ? (
+          <div></div>
+        ) : name == 'default2' ? (
+          <div></div>
+        ) : (
+          <DefaultDashPage />
+        )}
       </Main>
     </Box>
   );
