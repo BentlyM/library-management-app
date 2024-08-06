@@ -7,7 +7,7 @@ import FooterContent from '../components/FooterContent';
 
 const HomePage = () => {
   return (
-    <>
+    <div className='home-layout'>
       <NavBar />
       <Container
         className="navigation-content"
@@ -112,7 +112,7 @@ const HomePage = () => {
       >
         <FooterContent />
       </Container>
-    </>
+    </div>
   );
 };
 

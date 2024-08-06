@@ -1,8 +1,11 @@
+:root {
+    --layout-backgroundColor-1: #569af0
+}
+
 body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: #569af0;
 }
 
 #root {
@@ -20,4 +23,12 @@ ul.nav-bar {
         position: relative;
         top: 1px;
     }
+}
+
+.home-layout {
+    background-color: var(--layout-backgroundColor-1);
+}
+
+.login-layout {
+    background-color: var(--layout-backgroundColor-1);
 }

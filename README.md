@@ -42,7 +42,6 @@ A full-stack SaaS application for managing book libraries, built using Node.js, 
 * Mongoose
 * Bcrypt
 * JWT
-* Swagger (for API documentation)
 
 ## Getting Started
 ---------------

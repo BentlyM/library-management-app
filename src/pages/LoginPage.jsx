@@ -4,7 +4,7 @@ import React from 'react';
 
 const LoginPage = () => {
   return (
-    <>
+    <div className='login-layout'>
       <Container
         sx={{
           display: 'flex',
@@ -58,7 +58,7 @@ const LoginPage = () => {
           </Typography>
         </Box>
       </Container>
-    </>
+    </div>
   );
 };
 
