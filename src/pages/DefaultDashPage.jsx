@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import defaultImage from '../../public/DefaultDisplayImage.svg';
+import defaultImage from '../assets/DefaultDisplayImage.svg';
 
 const DefaultDashPage = () => {
   const [image, setImage] = useState(defaultImage);
