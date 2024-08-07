@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import defaultImage from '../../public/DefaultDisplayImage.svg';
 
 const DefaultDashPage = () => {
-  const [image, setImage] = useState((new Image().src = defaultImage));
+  const [image, setImage] = useState(defaultImage);
 
   useEffect(() => {
     setImage(image);

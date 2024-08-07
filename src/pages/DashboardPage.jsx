@@ -19,7 +19,6 @@ import SendIcon from '@mui/icons-material/Send';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link, Outlet, useParams } from 'react-router-dom';
-import DefaultDashPage from './DefaultDashPage';
 
 const drawerWidth = 240;
 
@@ -51,7 +50,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 export default function Dashboard() {
-  const { name } = useParams();
+  const { name } = useParams(); // this prob gonna be useful later
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [title , setTitle] = React.useState('Home Content')
@@ -129,8 +128,8 @@ export default function Dashboard() {
       </Drawer>
       <Main open={open}>
         {/* Content goes here */}
-        <h1>{title}</h1>
-        <Outlet/>
+        <h1>{(title)}</h1>
+        {(title != 'Home Content') && <Outlet/>}
       </Main>
     </Box>
   );

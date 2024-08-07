@@ -4,6 +4,8 @@ import LoginPage from '../pages/LoginPage';
 import React from 'react';
 import Dashboard from '../pages/DashboardPage';
 import DefaultDashPage from '../pages/DefaultDashPage';
+import BookForm from '../pages/dashboard-pages/AddBook';
+import BooksList from '../pages/dashboard-pages/CurrentBook';
 
 const routes = [
   {
@@ -26,11 +28,11 @@ const routes = [
       },
       {
         path: 'add-book',
-        element: <div></div>,
+        element: <BookForm />
       },
       {
         path: 'current-books',
-        element: <div></div>,
+        element: <BooksList />,
       },
       {
         path: 'send-books',
