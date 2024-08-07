@@ -19,6 +19,7 @@ import SendIcon from '@mui/icons-material/Send';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link, Outlet, useParams } from 'react-router-dom';
+import DefaultDashPage from './DefaultDashPage';
 
 const drawerWidth = 240;
 
@@ -53,7 +54,7 @@ export default function Dashboard() {
   const { name } = useParams(); // this prob gonna be useful later
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [title , setTitle] = React.useState('Home Content')
+  const [title, setTitle] = React.useState('Home Content');
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -65,7 +66,7 @@ export default function Dashboard() {
 
   const handleClick = (e) => {
     setTitle(e.target.textContent);
-  }
+  };
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -115,10 +116,18 @@ export default function Dashboard() {
               icon: <ImportContactsIcon />,
               to: 'borrow-books',
             },
-            { text: 'Profile', icon: <AccountCircleIcon />, to: `` },
+            {
+              text: 'Profile',
+              icon: <AccountCircleIcon />,
+              to: `settings`,
+            },
           ].map((item, index) => (
             <ListItem key={item.text} disablePadding>
-              <ListItemButton component={Link} to={item.to} onClick={handleClick}>
+              <ListItemButton
+                component={Link}
+                to={item.to}
+                onClick={handleClick}
+              >
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItemButton>
@@ -128,8 +137,8 @@ export default function Dashboard() {
       </Drawer>
       <Main open={open}>
         {/* Content goes here */}
-        <h1>{(title)}</h1>
-        {(title != 'Home Content') && <Outlet/>}
+        <h1>{title}</h1>
+        {title == 'Home Content' ? <DefaultDashPage /> : <Outlet />}
       </Main>
     </Box>
   );

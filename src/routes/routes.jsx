@@ -6,6 +6,7 @@ import Dashboard from '../pages/DashboardPage';
 import DefaultDashPage from '../pages/DefaultDashPage';
 import BookForm from '../pages/dashboard-pages/AddBook';
 import BooksList from '../pages/dashboard-pages/CurrentBook';
+import ProfileSettings from '../pages/dashboard-pages/Profile';
 
 const routes = [
   {
@@ -43,8 +44,8 @@ const routes = [
         element: <div></div>,
       },
       {
-        path: 'profile',
-        element: <div></div>,
+        path: 'settings',
+        element: <ProfileSettings />,
       },
     ],
   },
