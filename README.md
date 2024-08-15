@@ -35,7 +35,7 @@ A full-stack SaaS application for managing book libraries, built using Node.js, 
 
 ## Technologies Used
 --------------------
-* react,js
+* react.js
 * Node.js
 * Express.js
 * MongoDB
@@ -46,4 +46,4 @@ A full-stack SaaS application for managing book libraries, built using Node.js, 
 ## Getting Started
 ---------------
 
-[Link](llibrary-management-hgbhfl5pq-bentlyms-projects.vercel.app)
+Link -> (library-management-hgbhfl5pq-bentlyms-projects.vercel.app)
