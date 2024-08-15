@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
     dispatch({ type: 'LOGIN_REQUEST' });
     try {
       // Call API to authenticate user
-      const response = await fetch('/api/login', {
+      const response = await fetch('MONGOOSE OR SOMETHING RAH', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
