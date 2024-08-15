@@ -46,4 +46,4 @@ A full-stack SaaS application for managing book libraries, built using Node.js, 
 ## Getting Started
 ---------------
 
-Link -> (library-management-hgbhfl5pq-bentlyms-projects.vercel.app)
+[Link](https://library-management-app-xi.vercel.app/)
