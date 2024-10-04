@@ -1,7 +1,7 @@
 # SaaS Book Library Management System
 =====================================
 
-A full-stack SaaS application for managing book libraries, built using Node.js, Express.js, MongoDB, and react.js.
+A full-stack SaaS application for managing book libraries, built using Node.js, Express.js, Postgres, and react.js.
 
 ## Functionality
 ---------------
@@ -38,10 +38,9 @@ A full-stack SaaS application for managing book libraries, built using Node.js, 
 * react.js
 * Node.js
 * Express.js
-* MongoDB
-* Mongoose
 * Bcrypt
 * JWT
+* postgres/prisma
 
 ## Getting Started
 ---------------
