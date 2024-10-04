@@ -11,20 +11,14 @@
     "server": "json-server src/api/db.json --host 0.0.0.0 --port 3000"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^2.2.4",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@fontsource/roboto": "^5.0.14",
     "@mui/icons-material": "^5.16.6",
     "@mui/material": "^5.16.6",
-    "bcryptjs": "^2.4.3",
-    "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2",
-    "mongodb": "^6.8.0",
-    "mongoose": "^8.5.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.0"
+    "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

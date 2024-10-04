@@ -1,5 +1,3 @@
-//custom hooks are cool be cool kids HaHahA
-
 import { createContext, useContext, useMemo } from 'react';
 import { useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -12,14 +10,6 @@ const initialState = {
   isLoading: false,
   error: null,
 };
-
-/**
- * Reducer function for authentication state.
- *
- * @param {Object} state - The current authentication state.
- * @param {Object} action - The action to apply to the state.
- * @returns {Object} The new authentication state.
- */
 
 const authReducer = (state, action) => {
   switch (action.type) {
@@ -36,30 +26,25 @@ const authReducer = (state, action) => {
   }
 };
 
-/**
- * Provider component for the authentication context.
- *
- * @param {Object} props - The component props.
- * @param {ReactNode} props.children - The child components to render.
- */
-
 export const AuthProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(authReducer, initialState);
   const [user, setUser] = useLocalStorage('user', null);
+  const [state, dispatch] = useReducer(authReducer, {
+    ...initialState,
+    user
+  });
   const navigate = useNavigate();
 
   const login = async (data) => {
     dispatch({ type: 'LOGIN_REQUEST' });
     try {
-      // Call API to authenticate user
-      const response = await fetch('MONGOOSE OR SOMETHING RAH', {
+      const response = await fetch('/api/db.json', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
       const userData = await response.json();
       dispatch({ type: 'LOGIN_SUCCESS', payload: userData });
-      setUser(userData);
+      setUser(userData); // Save to local storage
       navigate('/profile');
     } catch (error) {
       dispatch({ type: 'LOGIN_FAILURE', payload: error.message });
@@ -68,7 +53,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     dispatch({ type: 'LOGOUT' });
-    setUser(null);
+    setUser(null); // Remove from local storage
     navigate('/', { replace: true });
   };
 
@@ -80,18 +65,11 @@ export const AuthProvider = ({ children }) => {
       login,
       logout,
     }),
-    [user] // or maybe state would be better?
+    [state]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
-
-
-/**
- * Hook to access the authentication context.
- * 
- * @returns {Object} The authentication context value.
- */
 
 export const useAuth = () => {
   return useContext(AuthContext);
